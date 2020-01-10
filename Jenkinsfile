@@ -8,6 +8,15 @@ try {
       checkout scm
     }
   }
+  
+  //srini added
+   agent {
+    docker {
+      image 'hashicorp/terraform:light'
+      args '--entrypoint='
+    }
+  }
+  //end of srini added
 
   // Run terraform init
   stage('init') {
