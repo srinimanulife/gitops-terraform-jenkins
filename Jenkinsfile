@@ -21,7 +21,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh '/var/lib/jenkins/tools/org.jenkinsci.plugins.terraform.TerraformInstallation/Terraform/terraform init'
+          sh 'terraform init'
         }
       }
     }
