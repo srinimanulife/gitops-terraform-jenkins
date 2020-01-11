@@ -2,23 +2,6 @@
 String credentialsId = 'awsCredentials'
 
 try {
-  //newly added 
-   agent any
-    tools {
-        "org.jenkinsci.plugins.terraform.TerraformInstallation" "terraform-0.12.19"
-
-    }
-    parameters {
-        string(name: 'WORKSPACE', defaultValue: 'development', description:'setting up workspace for terraform')
-    }
-    environment {
-        TF_HOME = tool('terraform-0.12.19')
-        TF_IN_AUTOMATION = "true"
-        PATH = "$TF_HOME:$PATH"
-        ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
-        SECRET_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-    }
-  //end of newly added
   
   stage('checkout') {
     node {
